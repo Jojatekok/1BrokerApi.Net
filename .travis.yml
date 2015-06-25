@@ -1,0 +1,7 @@
+language: csharp
+solution: Source/1BrokerApi.Net.sln
+
+# Blacklist
+branches:
+  except:
+    - gh-pages
