@@ -63,11 +63,13 @@
     <Compile Include="Enums\MarketCategory.cs" />
     <Compile Include="Enums\PositionStatus.cs" />
     <Compile Include="Enums\OrderType.cs" />
+    <Compile Include="Enums\Resolution.cs" />
     <Compile Include="Enums\TradeDirection.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="JsonObjects\AccountInfo.cs" />
     <Compile Include="JsonObjects\MarketDataDetailed.cs" />
     <Compile Include="JsonObjects\MarketData.cs" />
+    <Compile Include="JsonObjects\Bar.cs" />
     <Compile Include="JsonObjects\Quote.cs" />
     <Compile Include="JsonObjects\Position.cs" />
     <Compile Include="JsonObjects\Order.cs" />
@@ -80,8 +82,9 @@
     <Compile Include="OneBrokerClient.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.IO">
       <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.IO.dll</HintPath>

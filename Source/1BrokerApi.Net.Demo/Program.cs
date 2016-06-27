@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Jojatekok.OneBrokerAPI.Demo
 {
@@ -6,14 +7,7 @@ namespace Jojatekok.OneBrokerAPI.Demo
     {
         static void Main(string[] args)
         {
-            string apiToken = null;
-            if (args.Length > 0) apiToken = args[0];
-
-            if (string.IsNullOrWhiteSpace(apiToken)) {
-                Console.WriteLine("Please input your API token:");
-                apiToken = Console.ReadLine();
-                Console.WriteLine();
-            }
+            string apiToken = "8257f01472ad92db5f52c527ad3fcaee";
 
             // Initialize a new instance of the client
             using (var client = new OneBrokerClient(apiToken)) {
@@ -30,6 +24,18 @@ namespace Jojatekok.OneBrokerAPI.Demo
                 Console.WriteLine("You currently have:");
                 Console.WriteLine("   " + client.Orders.GetOpenOrders().Count + " open orders");
                 Console.WriteLine("   " + client.Positions.GetOpenPositions().Count + " open positions");
+
+                //============================================
+
+                DateTime from = new DateTime(2016, 6, 20);
+                DateTime to = new DateTime(2016, 6, 24);
+
+                IList<JsonObjects.Bar> bars = client.Markets.GetBars("AAPL", Resolution.Daily, from, to);
+
+                foreach(JsonObjects.Bar bar in bars)
+                {
+                    Console.WriteLine("[" + bar.o + "," + bar.h + "," + bar.l + "," + bar.c);
+                }
             }
 
             ShowExitMessage();
