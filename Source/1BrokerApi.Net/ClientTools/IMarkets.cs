@@ -1,5 +1,6 @@
 ﻿using Jojatekok.OneBrokerAPI.JsonObjects;
 using System.Collections.Generic;
+using System;
 
 namespace Jojatekok.OneBrokerAPI.ClientTools
 {
@@ -15,5 +16,8 @@ namespace Jojatekok.OneBrokerAPI.ClientTools
         /// <summary>Gets quotes of the given markets.</summary>
         /// <param name="symbols">Symbols of the markets to fetch data from.</param>
         IList<Quote> GetQuotes(params string[] symbols);
+
+        IList<Bar> GetBars(string symbol, Resolution resolution, DateTime from, DateTime to);
+
     }
 }

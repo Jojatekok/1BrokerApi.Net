@@ -21,6 +21,7 @@ namespace Jojatekok.OneBrokerAPI
 
         /// <summary>Provides information about markets.</summary>
         public ClientTools.IMarkets Markets { get; private set; }
+        
 
         /// <summary>If set, the client will use the proxy specified by this property.</summary>
         public IWebProxy Proxy {
